@@ -1,0 +1,65 @@
+Screen {
+  layers: bg fg;
+  background: $background;
+  border: none;
+}
+
+Player {
+  layer: bg;
+  width: auto;
+  height: auto;
+  color: $panel;
+  background: $panel;
+}
+
+Display.editor {
+  Player:hover {
+    tint: $foreground 50%;
+    text-style: reverse;
+  }
+
+  Player.focused_editable {
+    tint: $accent 50%;
+    text-style: none;
+  }
+
+  BaseObject:hover {
+    tint: $foreground 50%;
+    text-style: reverse;
+  }
+
+  BaseObject.focused_editable {
+    tint: $accent 50%;
+    text-style: none;
+  }
+}
+
+BaseObject {
+  color: red;
+  background: red;
+}
+
+Floor {
+  color: $secondary;
+  background: $panel;
+}
+
+Spikes {
+  color: $error;
+  background: $background;
+}
+
+Star {
+  color: $success;
+  background: $background;
+}
+
+Light {
+  color: $panel;
+  background: $background;
+}
+
+FloatingText {
+  color: $text-accent;
+  background: $background;
+}

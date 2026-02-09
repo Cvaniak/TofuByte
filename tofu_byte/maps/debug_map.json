@@ -1,0 +1,691 @@
+{
+  "objects": [
+    {
+      "type": "Floor",
+      "pos": [38, 29],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 10],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [36, 12],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 22],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [10, 29],
+      "size": [8, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [6, 3],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 24],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [6, 12],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [46, 18],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [28, 14],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [54, 16],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [20, 14],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [2, 30],
+      "size": [10, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 25],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 1],
+      "size": [14, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 12],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [54, 24],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 28],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "EndBall",
+      "pos": [35, 3],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 30],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [26, 26],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 26],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [6, 13],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 24],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [30, 11],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [42, 29],
+      "size": [12, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 25],
+      "size": [10, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [40, 13],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [26, 28],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [38, 28],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [54, 18],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [56, 22],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [38, 12],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 13],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 7],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 29],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 9],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 1],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 23],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [38, 18],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 4],
+      "size": [14, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [4, 8],
+      "size": [8, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 26],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [60, 31],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [40, 14],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 3],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 29],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [22, 26],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [8, 3],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 27],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 28],
+      "size": [10, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 29],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 7],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [44, 11],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [28, 5],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 19],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [0, 28],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 21],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 13],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 11],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [55, 8],
+      "size": [9, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [56, 23],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [38, 27],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [50, 12],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [26, 11],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [58, 14],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 31],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [2, 20],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 6],
+      "size": [14, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [32, 13],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [54, 25],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [42, 18],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [12, 19],
+      "size": [8, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 11],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [38, 26],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [2, 17],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [42, 14],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 27],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [22, 11],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 25],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 2],
+      "size": [14, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [26, 27],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 6],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [22, 28],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [2, 14],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 4],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [54, 17],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 12],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [24, 8],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [22, 29],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 5],
+      "size": [12, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 3],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [38, 11],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [26, 25],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 5],
+      "size": [14, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [62, 28],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 28],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [10, 12],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [],
+      "size": [14, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [31, 22],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 0],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 8],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [22, 27],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [20, 19],
+      "size": [10, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 2],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [62, 30],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [28, 11],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [48, 5],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [26, 29],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [30, 19],
+      "size": [26, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [24, 11],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [50, 27],
+      "size": [8, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [52, 26],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [18, 30],
+      "size": [32, 1],
+      "layer_number": 1
+    }
+  ],
+  "hp": 3,
+  "authors": ["Cvaniak"],
+  "game_version": "0.1",
+  "name": "first"
+}

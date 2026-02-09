@@ -1,0 +1,368 @@
+{
+  "objects": [
+    {
+      "type": "EndBall",
+      "pos": [
+        54,
+        6
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [
+        5,
+        24
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        3,
+        26
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        19,
+        18
+      ],
+      "size": [
+        16,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        51,
+        28
+      ],
+      "size": [
+        8,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        43,
+        8
+      ],
+      "size": [
+        16,
+        6
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        29
+      ],
+      "size": [
+        64,
+        3
+      ],
+      "layer_number": 2
+    },
+    {
+      "type": "Text",
+      "pos": [
+        26,
+        22
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 0,
+      "text_value": "🮃"
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        3,
+        18
+      ],
+      "size": [
+        16,
+        6
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        52,
+        5
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        27,
+        12
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        57,
+        5
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        34,
+        22
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        10,
+        10
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        7,
+        26
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        11,
+        8
+      ],
+      "size": [
+        16,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        13,
+        24
+      ],
+      "size": [
+        11,
+        1
+      ],
+      "layer_number": 0,
+      "text_value": "🮃 > ▀ > 🮃 ^"
+    },
+    {
+      "type": "Star",
+      "pos": [
+        51,
+        18
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        35,
+        18
+      ],
+      "size": [
+        16,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        4,
+        14
+      ],
+      "size": [
+        26,
+        3
+      ],
+      "layer_number": 1,
+      "text_value": "You can hold jump key or click it right after moving outside the edge"
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        27,
+        8
+      ],
+      "size": [
+        16,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        10,
+        8
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        -4,
+        0
+      ],
+      "size": [
+        7,
+        30
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        59,
+        0
+      ],
+      "size": [
+        7,
+        30
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        27,
+        25
+      ],
+      "size": [
+        30,
+        2
+      ],
+      "layer_number": 1,
+      "text_value": "You can jump in mid air moment after moving from celling"
+    },
+    {
+      "type": "Text",
+      "pos": [
+        23,
+        22
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 0,
+      "text_value": "🮂┃"
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        3,
+        17
+      ],
+      "size": [
+        8,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [],
+      "size": [
+        64,
+        3
+      ],
+      "layer_number": 2
+    },
+    {
+      "type": "Star",
+      "pos": [
+        43,
+        14
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        50,
+        20
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Cvaniak"
+  ],
+  "game_version": "0.1",
+  "name": "a_thread"
+}

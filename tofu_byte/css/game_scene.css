@@ -1,0 +1,219 @@
+/* game_scene.css */
+
+GameDigits {
+  layer: bg;
+  width: 26;
+  max-height: 5;
+  max-width: 26;
+  text-align: center;
+  margin: 0 1;
+  text-style: bold;
+
+  background: $background;
+  color: $primary;
+  border: outer $secondary;
+}
+
+SceneStatic {
+  layer: bg;
+}
+
+LifePoints {
+  margin: 0 1;
+  layer: bg;
+  height: 5;
+  width: 26;
+  max-height: 5;
+  max-width: 26;
+  align: center top;
+  content-align: center middle;
+  text-align: center;
+
+  background: $background;
+  color: $primary;
+  border: outer $secondary;
+
+  GameDigits {
+    width: auto;
+    border: none;
+    margin: 0 1;
+  }
+}
+
+Heart {
+  layer: bg;
+  width: 5;
+  margin: 0 2;
+  border: none;
+  color: $error;
+}
+
+Footer {
+  layer: bg;
+  height: auto;
+
+  Button {
+    width: auto;
+    min-width: 32;
+  }
+}
+
+Display {
+  layer: bg;
+  align: left top;
+  min-width: 66;
+  max-width: 66;
+  min-height: 34;
+  max-height: 34;
+  width: 66;
+  height: 34;
+
+  background: $background;
+  color: $primary;
+  border: inner $panel;
+}
+
+EditorScreenContainer Display {
+}
+
+SceneScreenContainer {
+  layer: bg;
+  background: $background;
+  align: center top;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+  #detached-wrapper {
+    layer: bg;
+    height: auto;
+    width: auto;
+    align: center middle;
+    background: $background;
+    border: none;
+  }
+
+  Vertical.left,
+  Vertical.right {
+    layer: bg;
+    width: auto;
+    height: auto;
+    border: double $panel;
+    background: $panel;
+    margin: 0 2;
+  }
+
+  Vertical.left {
+    align: right top;
+  }
+
+  Vertical.right {
+    align: left top;
+  }
+
+  Vertical.center {
+    layer: bg;
+    width: auto;
+    height: auto;
+    align: center middle;
+    background: $panel;
+    border: none;
+
+    SceneStatic.mouse_pos {
+      layer: none;
+      dock: bottom;
+    }
+  }
+}
+
+EditorScreenContainer {
+  Button {
+    layer: bg;
+    width: 1fr;
+    margin: 0 0 1 0;
+  }
+
+  /* --- INPUTS & LISTS ------------------------------------------- */
+  Vertical.left,
+  Vertical.right {
+    width: 32;
+  }
+
+  LabeledInput {
+    layer: bg;
+    height: auto;
+    width: 100%;
+    align: left middle;
+    padding: 0 1;
+    background: $surface;
+    border: thick $secondary;
+    color: $text;
+  }
+
+  LabeledInput .label {
+    width: auto;
+    height: auto;
+    color: $text;
+    background: $surface;
+    margin-right: 1;
+  }
+
+  LabeledInput Input {
+    width: 1fr;
+    height: auto;
+    border: none;
+    background: $panel-darken-1;
+    color: $text;
+
+    &:focus {
+      text-style: bold;
+      color: $text;
+      background: $panel-lighten-1;
+    }
+  }
+
+  ListView {
+    width: 100%;
+    height: 21;
+    layer: bg;
+    background: $surface;
+    border-left: vkey;
+    border: thick $secondary;
+
+    &:focus {
+      background-tint: $surface;
+    }
+  }
+
+  GameObjectListItem {
+    width: 1fr;
+    height: auto;
+    layer: bg;
+    background: $surface;
+    color: $text;
+    border: dashed $primary;
+    padding: 0 1;
+
+    Horizontal {
+      width: auto;
+      align: left middle;
+      height: auto;
+    }
+
+    Static {
+      layer: bg;
+      width: auto;
+      height: auto;
+      background: $surface;
+    }
+  }
+
+  GameObjectListItem:hover,
+  GameObjectListItem:focus {
+    border: dashed $primary-lighten-2;
+  }
+
+  GameObjectListItem.-highlight {
+    border: dashed $accent-darken-2;
+  }
+}

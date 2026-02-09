@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TofuByte"
+version = "0.1.0"
+description = "Terminal game with sweet block of tofu character!"
+readme = "README.md"
+requires-python = ">=3.10,<4"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "Cvaniak", email = "igna.cwaniak@gmail.com" }]
+dependencies = [
+    "textual==5.0.1", 
+    "tomli>=2.3.0; python_version < '3.11'", # Only installs if needed
+    "pynput>=1.7.6"
+]
+
+[dependency-groups]
+dev = ["pyright", "ruff", "textual-dev"]
+
+[project.urls]
+Homepage = "http://github.com/Cvaniak/TofuByte"
+
+[project.scripts]
+tofubyte = "tofu_byte.command_line:run"
+
+[tool.setuptools]
+package-data = { "tofu_byte" = ["css/*.css", "maps/*", "maps/*/*", "resources/*"] }
+
+[tool.pyright]
+typeCheckingMode = "strict"

@@ -1,0 +1,375 @@
+{
+  "objects": [
+    {
+      "type": "Floor",
+      "pos": [
+        32,
+        27
+      ],
+      "size": [
+        9,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        39,
+        19
+      ],
+      "size": [
+        7,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        18,
+        10
+      ],
+      "size": [
+        7,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        5,
+        28
+      ],
+      "size": [
+        27,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        44,
+        18
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [
+        8,
+        24
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        25,
+        23
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        59,
+        0
+      ],
+      "size": [
+        5,
+        29
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        30,
+        12
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        10,
+        25
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        16,
+        25
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        29
+      ],
+      "size": [
+        64,
+        3
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        16,
+        6
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        51,
+        22
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        14,
+        26
+      ],
+      "size": [
+        5,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        23,
+        24
+      ],
+      "size": [
+        5,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        23,
+        9
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        25,
+        13
+      ],
+      "size": [
+        7,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [],
+      "size": [
+        5,
+        29
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        32,
+        16
+      ],
+      "size": [
+        7,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        5,
+        1
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        37,
+        15
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "EndBall",
+      "pos": [
+        7,
+        2
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        11,
+        7
+      ],
+      "size": [
+        7,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        50,
+        23
+      ],
+      "size": [
+        9,
+        6
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        33,
+        26
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        42,
+        24
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        10,
+        1
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        5,
+        4
+      ],
+      "size": [
+        6,
+        5
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        6,
+        25
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        41,
+        25
+      ],
+      "size": [
+        9,
+        4
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Cvaniak"
+  ],
+  "game_version": "0.1",
+  "name": "b_map.json"
+}

@@ -1,0 +1,63 @@
+<svg width="40" height="120" viewBox="0 0 40 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    rect { fill: #2ea44f; opacity: 0; animation: stepCycle 1.7s infinite step-end; }
+    @media (prefers-color-scheme: dark) { rect { fill: #3fb950; } }
+
+    .d1 { animation-delay: 0.00s; } .d2 { animation-delay: 0.05s; }
+    .d3 { animation-delay: 0.10s; } .d4 { animation-delay: 0.15s; }
+    .d5 { animation-delay: 0.20s; } .d6 { animation-delay: 0.25s; }
+    .d7 { animation-delay: 0.30s; } .d8 { animation-delay: 0.35s; }
+    .d9 { animation-delay: 0.40s; } .d10 { animation-delay: 0.45s; }
+    .d11 { animation-delay: 0.50s; } .d12 { animation-delay: 0.55s; }
+    .d13 { animation-delay: 0.60s; } .d14 { animation-delay: 0.65s; }
+    .d15 { animation-delay: 0.70s; } .d16 { animation-delay: 0.75s; }
+    .d17 { animation-delay: 0.80s; } .d18 { animation-delay: 0.85s; }
+    .d19 { animation-delay: 0.90s; } .d20 { animation-delay: 0.95s; }
+    .d21 { animation-delay: 1.00s; } .d22 { animation-delay: 1.05s; }
+    .d23 { animation-delay: 1.10s; } .d24 { animation-delay: 1.15s; }
+    .d25 { animation-delay: 1.20s; } .d26 { animation-delay: 1.25s; }
+    .d27 { animation-delay: 1.30s; } .d28 { animation-delay: 1.35s; }
+    .d29 { animation-delay: 1.40s; } .d30 { animation-delay: 1.45s; }
+    .d31 { animation-delay: 1.50s; } .d32 { animation-delay: 1.55s; }
+    .d33 { animation-delay: 1.60s; } .d34 { animation-delay: 1.65s; }
+
+    @keyframes stepCycle { 0% { opacity: 1; } 2.94% { opacity: 0; } 100% { opacity: 0; } }
+  </style>
+
+  <rect x="10" y="115" width="20" height="4" class="d1"/>
+  <rect x="10" y="115" width="20" height="4" class="d2"/>
+  <rect x="10" y="115" width="20" height="4" class="d3"/>
+  <rect x="10" y="115" width="20" height="4" class="d4"/>
+  <rect x="10" y="105" width="20" height="15" class="d5"/>
+  <rect x="10" y="105" width="20" height="15" class="d6"/>
+  <rect x="10" y="105" width="20" height="15" class="d7"/>
+  <rect x="10" y="105" width="20" height="15" class="d8"/>
+  <rect x="10" y="115" width="20" height="4" class="d9"/>
+  <rect x="10" y="115" width="20" height="4" class="d10"/>
+  <rect x="10" y="115" width="20" height="4" class="d11"/>
+  <rect x="10" y="115" width="20" height="4" class="d12"/>
+  <rect x="10" y="105" width="20" height="15" class="d13"/>
+  <rect x="10" y="105" width="20" height="15" class="d14"/>
+  <rect x="10" y="105" width="20" height="15" class="d15"/>
+  <rect x="10" y="105" width="20" height="15" class="d16"/>
+
+  <rect x="10" y="105" width="20" height="15" class="d17"/>
+  <rect x="17" y="90" width="6" height="30" class="d18"/>
+  <rect x="17" y="65" width="6" height="30" class="d19"/>
+  <rect x="17" y="40" width="6" height="30" class="d20"/>
+  <rect x="17" y="15" width="6" height="30" class="d21"/>
+  <rect x="10" y="10" width="20" height="4" class="d22"/>
+  <rect x="10" y="10" width="20" height="15" class="d23"/>
+  <rect x="10" y="10" width="20" height="15" class="d24"/>
+
+  <rect x="10" y="10" width="20" height="4" class="d25"/>
+  <rect x="17" y="15" width="6" height="30" class="d26"/>
+  <rect x="17" y="40" width="6" height="30" class="d27"/>
+  <rect x="17" y="65" width="6" height="30" class="d28"/>
+  <rect x="17" y="90" width="6" height="30" class="d29"/>
+  <rect x="10" y="105" width="20" height="15" class="d30"/>
+  <rect x="10" y="105" width="20" height="15" class="d31"/>
+  <rect x="10" y="115" width="20" height="4" class="d32"/>
+  <rect x="10" y="115" width="20" height="4" class="d33"/>
+  <rect x="10" y="115" width="20" height="4" class="d34"/>
+</svg>

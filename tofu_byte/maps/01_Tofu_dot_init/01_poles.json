@@ -1,0 +1,145 @@
+{
+  "objects": [
+    {
+      "type": "SpikesDown",
+      "pos": [23, 24],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [45, 14],
+      "size": [6, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [2, 26],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [62, 7],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [12, 26],
+      "size": [6, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [29, 29],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [34, 18],
+      "size": [6, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [23, 22],
+      "size": [6, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "EndBall",
+      "pos": [59, 8],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [17, 24],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [5, 26],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [60, 12],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [56, 10],
+      "size": [8, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 30],
+      "size": [64, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [50, 12],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [51, 29],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [39, 16],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [57, 7],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [28, 20],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [45, 16],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [40, 29],
+      "size": [6, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [8, 26],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [34, 20],
+      "size": [6, 1],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": ["Cvaniak"],
+  "game_version": "0.1",
+  "name": "06_poles"
+}

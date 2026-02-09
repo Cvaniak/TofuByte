@@ -1,0 +1,133 @@
+{
+  "objects": [
+    {
+      "type": "Star",
+      "pos": [31, 9],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "EndBall",
+      "pos": [31, 1],
+      "size": [2, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [28, 26],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [45, 4],
+      "size": [4, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [0, 30],
+      "size": [64, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [32, 22],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [32, 9],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [24, 24],
+      "size": [16, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [35, 26],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [28, 0],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [24, 3],
+      "size": [16, 4],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [31, 22],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [57, 0],
+      "size": [7, 30],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [24, 11],
+      "size": [16, 3],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [35, 0],
+      "size": [1, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [31, 25],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [],
+      "size": [7, 30],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [31, 16],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [32, 16],
+      "size": [1, 1],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [24, 18],
+      "size": [16, 2],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [15, 4],
+      "size": [4, 1],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": ["Cvaniak"],
+  "game_version": "0.1",
+  "name": "05_foo"
+}

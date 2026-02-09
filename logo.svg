@@ -1,0 +1,41 @@
+<svg width="550" height="120" viewBox="0 0 550 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .block { fill: #2ea44f; }
+    @media (prefers-color-scheme: dark) { .block { fill: #3fb950; } }
+  </style>
+  
+  <rect x="0" y="10" width="50" height="15" class="block" />
+  <rect x="18" y="25" width="14" height="85" class="block" />
+  
+  <rect x="65" y="10" width="40" height="15" class="block" />
+  <rect x="65" y="95" width="40" height="15" class="block" />
+  <rect x="65" y="10" width="12" height="100" class="block" />
+  <rect x="93" y="10" width="12" height="100" class="block" />
+  
+  <rect x="120" y="10" width="40" height="15" class="block" />
+  <rect x="120" y="50" width="30" height="12" class="block" />
+  <rect x="120" y="10" width="14" height="100" class="block" />
+  
+  <rect x="175" y="10" width="12" height="85" class="block" />
+  <rect x="203" y="10" width="12" height="85" class="block" />
+  <rect x="175" y="95" width="40" height="15" class="block" />
+
+  <rect x="260" y="10" width="14" height="100" class="block" />
+  <rect x="260" y="10" width="35" height="12" class="block" />
+  <rect x="260" y="50" width="35" height="10" class="block" />
+  <rect x="260" y="98" width="35" height="12" class="block" />
+  <rect x="283" y="10" width="12" height="100" class="block" />
+  
+  <rect x="310" y="10" width="12" height="40" class="block" />
+  <rect x="338" y="10" width="12" height="40" class="block" />
+  <rect x="310" y="50" width="40" height="12" class="block" />
+  <rect x="324" y="62" width="12" height="48" class="block" />
+  
+  <rect x="365" y="10" width="50" height="15" class="block" />
+  <rect x="383" y="25" width="14" height="85" class="block" />
+  
+  <rect x="430" y="10" width="45" height="15" class="block" />
+  <rect x="430" y="50" width="30" height="12" class="block" />
+  <rect x="430" y="95" width="45" height="15" class="block" />
+  <rect x="430" y="10" width="14" height="100" class="block" />
+</svg>

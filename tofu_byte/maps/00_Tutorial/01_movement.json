@@ -1,0 +1,191 @@
+{
+  "objects": [
+    {
+      "type": "Star",
+      "pos": [
+        54,
+        23
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        23,
+        16
+      ],
+      "size": [
+        18,
+        3
+      ],
+      "layer_number": 1,
+      "text_value": "s, down_arrow, j - to crunch or   drop from celling"
+    },
+    {
+      "type": "Text",
+      "pos": [
+        21,
+        11
+      ],
+      "size": [
+        21,
+        2
+      ],
+      "layer_number": 1,
+      "text_value": "w, up_arrow, k, space - to move jump"
+    },
+    {
+      "type": "Star",
+      "pos": [
+        9,
+        23
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        35,
+        20
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        28,
+        20
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        24
+      ],
+      "size": [
+        64,
+        8
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        46,
+        23
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        46,
+        16
+      ],
+      "size": [
+        17,
+        2
+      ],
+      "layer_number": 1,
+      "text_value": "d, right_arrow, l - to move right"
+    },
+    {
+      "type": "Star",
+      "pos": [
+        9,
+        20
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [
+        31,
+        19
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        54,
+        20
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        23,
+        8
+      ],
+      "size": [
+        19,
+        1
+      ],
+      "layer_number": 1,
+      "text_value": "You can move with:"
+    },
+    {
+      "type": "Text",
+      "pos": [
+        1,
+        16
+      ],
+      "size": [
+        16,
+        2
+      ],
+      "layer_number": 1,
+      "text_value": "a, left_arrow, h - to move left "
+    },
+    {
+      "type": "Star",
+      "pos": [
+        17,
+        23
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Cvaniak"
+  ],
+  "game_version": "0.1",
+  "name": "04_bar"
+}

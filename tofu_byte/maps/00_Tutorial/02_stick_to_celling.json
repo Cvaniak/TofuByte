@@ -1,0 +1,224 @@
+{
+  "objects": [
+    {
+      "type": "Spikes",
+      "pos": [
+        11,
+        19
+      ],
+      "size": [
+        10,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        14
+      ],
+      "size": [
+        26,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        19
+      ],
+      "size": [
+        11,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        26,
+        14
+      ],
+      "size": [
+        12,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        43,
+        19
+      ],
+      "size": [
+        10,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [
+        3,
+        16
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        62,
+        16
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        57,
+        16
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        23,
+        21
+      ],
+      "size": [
+        21,
+        2
+      ],
+      "layer_number": 1,
+      "text_value": "And drop by clicking s, down_arrow or j"
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        21,
+        19
+      ],
+      "size": [
+        22,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Text",
+      "pos": [
+        0,
+        11
+      ],
+      "size": [
+        26,
+        2
+      ],
+      "layer_number": 1,
+      "text_value": "You can stick to celling by jumping on it"
+    },
+    {
+      "type": "Light",
+      "pos": [
+        5,
+        16
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        53,
+        19
+      ],
+      "size": [
+        11,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        15
+      ],
+      "size": [
+        1,
+        5
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "EndBall",
+      "pos": [
+        59,
+        17
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        1,
+        16
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        63,
+        15
+      ],
+      "size": [
+        1,
+        5
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        38,
+        14
+      ],
+      "size": [
+        26,
+        1
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Cvaniak"
+  ],
+  "game_version": "0.1",
+  "name": "02_stick_to_celling"
+}
