@@ -4,6 +4,7 @@
 </p>
 
 Terminal game with sweet block of [tofu](https://fonts.google.com/knowledge/glossary/tofu) character!
+<img width="2234" height="1417" alt="Screenshot_20260210_232506" src="https://github.com/user-attachments/assets/216ac410-a3da-4b46-b282-94c95a8c2e21" />
 
 ## How to install
 
@@ -77,6 +78,8 @@ Also if you found solution for your problem, share this in the issue so it can h
 
 ## Map Editing
 
+<img width="2326" height="1366" alt="Screenshot_20260210_232553" src="https://github.com/user-attachments/assets/34ce8155-f2dc-4d09-8b51-04e890ad78b6" />
+
 You can edit and create maps with built in editor!
 
 There are some keybindings worth to know:
@@ -85,6 +88,8 @@ There are some keybindings worth to know:
 - ctrl+mouse_click - selects multiple
 
 Some tutorial will be provided soon.
+
+<img width="2290" height="1348" alt="Screenshot_20260210_232854" src="https://github.com/user-attachments/assets/533fb464-74d4-47f9-bccf-cb88b3ccb4c6" />
 
 ## Development
 
