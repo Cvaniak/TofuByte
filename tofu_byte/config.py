@@ -6,7 +6,7 @@ from platformdirs import user_config_dir, user_data_dir
 
 DEBUG: dict[str, str] = defaultdict(str)
 
-GAME_VERSION = "0.1.0"
+GAME_VERSION = "0.1.1"
 
 APP_NAME = "TofuByte"
 APP_AUTHOR = "Cvaniak"
