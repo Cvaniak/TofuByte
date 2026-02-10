@@ -15,45 +15,40 @@ To properly display all characters:
 - Install a Unicode-ready font (e.g., NerdFonts).
 - Ensure your shell environment is configured to use UTF-8 encoding.
 
-### Using pip/pipx
+### Installation and running TofuByte
+
+With [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
 
 ```bash
-pip install tofubyte
-# or
+uvx tofubyte
+```
+
+or using [`pipx`](https://pipx.pypa.io/stable/installation/)
+
+```bash
 pipx install tofubyte
-```
-
-and run with
-
-```bash
-tofubyte
-# or source venv first
-source .venv/bin/activate
 tofubyte
 ```
 
-### Using uv/uvx
+If you prefer mauall Installation:
 
 ```bash
-uv pip install tofubyte
-# or
-uvx install tofubyte
-```
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-and run with
+# Install the package
+pip install tofubyte
 
-```bash
-tofubyte
-# or source venv first
-source .venv/bin/activate
+# Run the game
 tofubyte
 ```
 
 ## Input system
 
-The game uses `pynput` for handling keyboard input. As it is not a terminal-native input system, it might not work as expected in all terminal environments or operating systems.
+The game uses [`pynput`](https://pynput.readthedocs.io/en/latest/) for handling keyboard input. As it is not a terminal-native input system, it might not work as expected in all terminal environments or operating systems.
 
-I plan to implement an alternative input mode in the game that will not require any additional input system.
+I plan to implement scroll mode in the game that will not require any additional input system.
 
 ## Troubleshooting
 
@@ -80,11 +75,29 @@ If you are concerned about how `Pynput` is used, feel free to review the availab
 
 Also if you found solution for your problem, share this in the issue so it can help others.
 
+## Map Editing
+
+You can edit and create maps with built in editor!
+
+There are some keybindings worth to know:
+
+- ctrl+mouse_move - resize
+- ctrl+mouse_click - selects multiple
+
+Some tutorial will be provided soon.
+
 ## Development
 
-```
+There are some additional tools I have used during developed. They show some stats and other things that helped debug:
+
+```bash
 uv run textual run --dev tofu_byte.command_line:run --debug contact_dir,step,fps,footer
 ```
+
+## Speciall thanks
+
+As always, huge shot out to [Textualize](https://github.com/Textualize) team!  
+**TofuByte** was created as result of exploration of what can be done to display game with such a nice framework as [Textual](https://github.com/textualize/textual/).
 
 ## License and Community
 

@@ -2,6 +2,9 @@
 
 - [ ] More maps
 - [ ] Legacy character support
+- [ ] Keybindings in editor
+- [ ] Settings
+  - [ ] Theme
 
 # LOW PRIORITY
 
@@ -13,10 +16,6 @@
 - [ ] Map browsing
 - [ ] Map preview or data in map menu screen
 - [ ] Effects stack for each object
-- [ ] Settings
-  - [ ] Colors
-  - [ ] Models
-  - [x] Color palettes
 - [ ] High Score / Save scores
   - [ ] Save points and time
 - [x] Check fonts
