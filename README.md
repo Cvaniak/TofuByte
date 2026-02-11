@@ -4,7 +4,11 @@
 </p>
 
 Terminal game with sweet block of [tofu](https://fonts.google.com/knowledge/glossary/tofu) character!
-<img width="2234" height="1417" alt="Screenshot_20260210_232506" src="https://github.com/user-attachments/assets/216ac410-a3da-4b46-b282-94c95a8c2e21" />
+
+![output](https://github.com/user-attachments/assets/6911bb1a-72b5-4c7a-8794-70a33552f1e1)
+
+
+
 
 ## How to install
 
