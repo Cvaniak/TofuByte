@@ -1,0 +1,330 @@
+{
+  "objects": [
+    {
+      "type": "Floor",
+      "pos": [
+        12,
+        16
+      ],
+      "size": [
+        4,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        2,
+        17
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        56,
+        20
+      ],
+      "size": [
+        8,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        31
+      ],
+      "size": [
+        64,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        62,
+        17
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        0,
+        30
+      ],
+      "size": [
+        64,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        2,
+        20
+      ],
+      "size": [
+        7,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        21,
+        13
+      ],
+      "size": [
+        4,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        12,
+        10
+      ],
+      "size": [
+        2,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        43,
+        12
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        21,
+        7
+      ],
+      "size": [
+        2,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        21,
+        9
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        21,
+        6
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        50,
+        16
+      ],
+      "size": [
+        4,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        13,
+        9
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        8,
+        17
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        31,
+        3
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        12,
+        12
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        31,
+        4
+      ],
+      "size": [
+        2,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        31,
+        6
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        41,
+        13
+      ],
+      "size": [
+        4,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        31,
+        10
+      ],
+      "size": [
+        4,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "EndBall",
+      "pos": [
+        59,
+        18
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [
+        5,
+        17
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        57,
+        17
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        12,
+        9
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        52,
+        15
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Cvaniak"
+  ],
+  "game_version": "0.1.1",
+  "name": "06_poles"
+}

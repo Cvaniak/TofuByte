@@ -1,0 +1,210 @@
+{
+  "objects": [
+    {
+      "type": "Floor",
+      "pos": [
+        46,
+        15
+      ],
+      "size": [
+        10,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        7,
+        15
+      ],
+      "size": [
+        10,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        58,
+        18
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        22,
+        17
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        23
+      ],
+      "size": [
+        65,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        32
+      ],
+      "size": [
+        64,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        6,
+        22
+      ],
+      "size": [
+        52,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        5,
+        18
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        30,
+        15
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        25,
+        13
+      ],
+      "size": [
+        12,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        58,
+        21
+      ],
+      "size": [
+        6,
+        2
+      ],
+      "layer_number": 2
+    },
+    {
+      "type": "EndBall",
+      "pos": [
+        60,
+        19
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        33,
+        15
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        0,
+        18
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        63,
+        18
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        21
+      ],
+      "size": [
+        6,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [
+        2,
+        19
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Gemini_Architect"
+  ],
+  "game_version": "0.1.1",
+  "name": "11_the_acid_swing"
+}

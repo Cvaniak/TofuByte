@@ -1,0 +1,234 @@
+{
+  "objects": [
+    {
+      "type": "Floor",
+      "pos": [
+        22,
+        16
+      ],
+      "size": [
+        4,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        27,
+        3
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        31
+      ],
+      "size": [
+        64,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        37,
+        17
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        1,
+        21
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        35,
+        18
+      ],
+      "size": [
+        6,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        14,
+        20
+      ],
+      "size": [
+        4,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        45,
+        14
+      ],
+      "size": [
+        4,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        56,
+        6
+      ],
+      "size": [
+        5,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        26,
+        10
+      ],
+      "size": [
+        10,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Player",
+      "pos": [
+        3,
+        21
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        0,
+        30
+      ],
+      "size": [
+        64,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        5,
+        21
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        32,
+        3
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Star",
+      "pos": [
+        36,
+        13
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        56,
+        11
+      ],
+      "size": [
+        5,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        26,
+        6
+      ],
+      "size": [
+        27,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "EndBall",
+      "pos": [
+        29,
+        4
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        24
+      ],
+      "size": [
+        10,
+        2
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Gemini_Architect"
+  ],
+  "game_version": "0.1.1",
+  "name": "08_rhythm_ceiling"
+}
