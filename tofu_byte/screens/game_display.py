@@ -95,7 +95,10 @@ class ListOfObjects(ListView):
 class EditorScreenContainer(SceneScreenContainer):
     BINDINGS = [
         Binding("escape", "escape", "Pause Menu"),
+        Binding("ctrl+a", "select_all", "Select All"),
+        Binding("ctrl+v", "copy_object", "Copy Object"),
         Binding("ctrl+s", "save_game", "Save Game"),
+        Binding("ctrl+r", "try_map", "Try Map"),
         Binding("d", "delete_object", "Delete Object"),
     ]
 
@@ -246,10 +249,24 @@ class EditorScreenContainer(SceneScreenContainer):
             await self.unfocus_object(object)
         await self.recompose()
 
+    async def action_copy_object(self):
+        await self.copy_selected_objects()
+
+    async def action_select_all(self):
+        self.selected_objects = [obj for obj in self.game.objects]
+        await self.mark_as_selected(self.selected_objects, True)
+        await self.recompose()
+
     def action_save_game(self):
         if self.game is None:
             return
         self.save_game(self.game.game_file)
+
+    def action_try_map(self):
+        if self.game is None:
+            return
+        self.save_game(self.game.game_file)
+        self.app.push_screen(GameScreenContainer(self.map_chain, test_only=True))
 
     async def action_delete_object(self):
         await self.delete_object()
@@ -323,6 +340,9 @@ class EditorScreenContainer(SceneScreenContainer):
 
     @on(Button.Pressed, "#copy_object")
     async def on_copy_object(self, event: Button.Pressed):
+        await self.copy_selected_objects()
+
+    async def copy_selected_objects(self):
         if self.game is None:
             return
         if any(isinstance(object, Player) for object in self.selected_objects):
@@ -572,10 +592,7 @@ class GameScreenContainer(SceneScreenContainer):
         Binding("c", "stop", "Single step"),
     ]
 
-    def __init__(
-        self,
-        map_chain: MapChain,
-    ) -> None:
+    def __init__(self, map_chain: MapChain, test_only: bool = False) -> None:
         self.map_chain = map_chain
         self.game: Optional[Game] = None
         super().__init__()
@@ -590,6 +607,7 @@ class GameScreenContainer(SceneScreenContainer):
         self.should_check_input_system = should_check_input_system
         self.checking_input = False
         self.is_reseting = False
+        self.test_only = test_only
 
     # ===== Compose =====
 
@@ -685,6 +703,10 @@ class GameScreenContainer(SceneScreenContainer):
                 await self.delete_game()
                 self.dismiss(None)
 
+        if self.test_only:
+            self.dismiss(self.map_chain)
+            return
+
         self.app.push_screen("pause_menu", check_if_restart)
 
     async def action_restart_game(self):
@@ -721,6 +743,10 @@ class GameScreenContainer(SceneScreenContainer):
         get_textlog().write("End game")
         await self.delete_game()
         self.timer.stop()
+
+        if self.test_only:
+            self.dismiss(self.map_chain)
+            return
 
         self.app.push_screen(
             EndScreen(

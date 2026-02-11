@@ -22,6 +22,9 @@
   - [x] Basic font rendering
   - [ ] Tweaks
 - [ ] Switch off visuals with flag
+- [ ] Show the name of the map (in game and editor)
+- [ ] Select elements in editor by dragin across screen
+- [ ]
 
 # NICE TO HAVE
 
@@ -32,6 +35,7 @@
 - Add dynamic lights
 - Background effects?
 - Sounds?
+- Pet the Tofu (by mouse clicking)
 
 # Bugs
 
