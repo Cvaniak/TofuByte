@@ -9,9 +9,10 @@ DEBUG: dict[str, bool] = {
     "footer": False,
     "contact_dir": False,
     "player_state": False,
+    "scenarios": False,
 }
 
-GAME_VERSION = "0.3.0"
+GAME_VERSION = "0.3.2"
 
 APP_NAME = "TofuByte"
 APP_AUTHOR = "Cvaniak"

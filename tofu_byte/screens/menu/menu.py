@@ -3,7 +3,7 @@ from __future__ import annotations
 from textual.app import ComposeResult
 from textual.containers import Container
 from textual.widgets import Button, Footer
-from tofu_byte.config import GAME_VERSION
+from tofu_byte.config import DEBUG, GAME_VERSION
 from tofu_byte.screens.const import MENU_TEXT
 
 
@@ -25,7 +25,8 @@ class Menu(MenuScreenBase[None]):
             yield PrimaryScreenTitle(MENU_TEXT)
         with Container():
             yield Button("Start Game", id="map_loader", variant="success")
-            yield Button("Scenarios", id="scenarios", variant="primary")
+            if DEBUG["scenarios"]:
+                yield Button("Scenarios", id="scenarios", variant="primary")
             yield Button("Edit Map", id="map_editor", variant="primary")
             yield Button("Troubleshooting", id="troubleshooting", variant="primary")
             yield Button("About", id="about", variant="primary")
