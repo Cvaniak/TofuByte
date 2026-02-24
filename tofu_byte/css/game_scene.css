@@ -126,6 +126,12 @@ SceneScreenContainer {
   }
 }
 
+GameScreenContainer {
+  PlayerStateDebugWidget {
+    layer: bg;
+  }
+}
+
 EditorScreenContainer {
   Button {
     layer: bg;
@@ -139,7 +145,8 @@ EditorScreenContainer {
     width: 32;
   }
 
-  LabeledInput {
+  LabeledInput,
+  LabeledSwitch {
     layer: bg;
     height: auto;
     width: 100%;
@@ -159,6 +166,27 @@ EditorScreenContainer {
   }
 
   LabeledInput Input {
+    width: 1fr;
+    height: auto;
+    border: none;
+    background: $panel-darken-1;
+    color: $text;
+
+    &:focus {
+      text-style: bold;
+      color: $text;
+      background: $panel-lighten-1;
+    }
+  }
+  LabeledSwitch .label {
+    width: auto;
+    height: auto;
+    color: $text;
+    background: $surface;
+    margin-right: 1;
+  }
+
+  LabeledSwitch Switch {
     width: 1fr;
     height: auto;
     border: none;
@@ -215,5 +243,70 @@ EditorScreenContainer {
 
   GameObjectListItem.-highlight {
     border: dashed $accent-darken-2;
+  }
+}
+
+ScenarioScreenContainer {
+  .scenario-info {
+    padding: 1;
+    border: solid $accent;
+    background: $surface;
+    margin-bottom: 1;
+  }
+
+  #step-counter {
+    text-align: center;
+    color: $warning;
+    margin-bottom: 1;
+  }
+
+  ScenarioTimelineWidget {
+    height: 1fr;
+    border: solid $accent;
+    background: $surface;
+    margin-bottom: 1;
+  }
+
+  #timeline-list {
+    height: 100%;
+  }
+
+  #timeline-list ListItem {
+    padding: 0 1;
+  }
+
+  #timeline-list ListItem.--highlight {
+    background: $accent 30%;
+    color: $text;
+  }
+
+  #detached-wrapper {
+    height: auto;
+    width: auto;
+
+    .left,
+    .right {
+      width: 30;
+      height: 34;
+      padding: 1;
+      margin: 0 1;
+      border: double $panel;
+      background: $panel;
+    }
+
+    .center {
+      width: 66;
+      height: 34;
+    }
+  }
+
+  #scenario-counter {
+    text-align: center;
+    margin-top: 1;
+    color: $primary;
+  }
+
+  Button {
+    width: 1fr;
   }
 }

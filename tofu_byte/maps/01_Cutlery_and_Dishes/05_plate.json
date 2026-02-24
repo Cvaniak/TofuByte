@@ -1,49 +1,13 @@
 {
   "objects": [
     {
-      "type": "Floor",
+      "type": "EndBall",
       "pos": [
-        12,
-        16
+        59,
+        18
       ],
       "size": [
-        4,
-        4
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Light",
-      "pos": [
         2,
-        17
-      ],
-      "size": [
-        1,
-        2
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Floor",
-      "pos": [
-        56,
-        20
-      ],
-      "size": [
-        8,
-        1
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Floor",
-      "pos": [
-        0,
-        31
-      ],
-      "size": [
-        64,
         1
       ],
       "layer_number": 1
@@ -61,10 +25,22 @@
       "layer_number": 1
     },
     {
-      "type": "Spikes",
+      "type": "Touret",
+      "pos": [
+        10,
+        54
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
       "pos": [
         0,
-        30
+        31
       ],
       "size": [
         64,
@@ -75,12 +51,120 @@
     {
       "type": "Floor",
       "pos": [
+        50,
+        16
+      ],
+      "size": [
+        4,
+        4
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Touret",
+      "pos": [
+        13,
+        22
+      ],
+      "size": [
         2,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        2,
+        17
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Touret",
+      "pos": [
+        4,
+        261
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        57,
+        17
+      ],
+      "size": [
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        52,
+        15
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        31,
+        6
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        56,
         20
       ],
       "size": [
-        7,
+        8,
         1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "SpikesDown",
+      "pos": [
+        21,
+        9
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Light",
+      "pos": [
+        8,
+        17
+      ],
+      "size": [
+        1,
+        2
       ],
       "layer_number": 1
     },
@@ -99,48 +183,36 @@
     {
       "type": "Floor",
       "pos": [
-        12,
+        31,
         10
       ],
       "size": [
-        2,
-        2
+        4,
+        4
       ],
       "layer_number": 1
     },
     {
-      "type": "Spikes",
+      "type": "Star",
       "pos": [
-        43,
-        12
-      ],
-      "size": [
-        2,
-        1
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Floor",
-      "pos": [
-        21,
-        7
-      ],
-      "size": [
-        2,
-        2
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "SpikesDown",
-      "pos": [
-        21,
+        12,
         9
       ],
       "size": [
-        2,
+        1,
         1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Touret",
+      "pos": [
+        13,
+        277
+      ],
+      "size": [
+        1,
+        2
       ],
       "layer_number": 1
     },
@@ -157,14 +229,26 @@
       "layer_number": 1
     },
     {
-      "type": "Floor",
+      "type": "Touret",
       "pos": [
-        50,
-        16
+        27,
+        169
       ],
       "size": [
-        4,
+        1,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        31,
         4
+      ],
+      "size": [
+        2,
+        2
       ],
       "layer_number": 1
     },
@@ -181,10 +265,10 @@
       "layer_number": 1
     },
     {
-      "type": "Light",
+      "type": "Touret",
       "pos": [
-        8,
-        17
+        10,
+        95
       ],
       "size": [
         1,
@@ -205,6 +289,42 @@
       "layer_number": 1
     },
     {
+      "type": "Spikes",
+      "pos": [
+        0,
+        30
+      ],
+      "size": [
+        64,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        2,
+        24
+      ],
+      "size": [
+        25,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Spikes",
+      "pos": [
+        43,
+        12
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "layer_number": 1
+    },
+    {
       "type": "SpikesDown",
       "pos": [
         12,
@@ -217,26 +337,10 @@
       "layer_number": 1
     },
     {
-      "type": "Floor",
+      "type": "Player",
       "pos": [
-        31,
-        4
-      ],
-      "size": [
-        2,
-        2
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "SpikesDown",
-      "pos": [
-        31,
-        6
-      ],
-      "size": [
-        2,
-        1
+        5,
+        17
       ],
       "layer_number": 1
     },
@@ -255,8 +359,20 @@
     {
       "type": "Floor",
       "pos": [
-        31,
+        12,
         10
+      ],
+      "size": [
+        2,
+        2
+      ],
+      "layer_number": 1
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        12,
+        16
       ],
       "size": [
         4,
@@ -265,58 +381,14 @@
       "layer_number": 1
     },
     {
-      "type": "EndBall",
+      "type": "Floor",
       "pos": [
-        59,
-        18
+        21,
+        7
       ],
       "size": [
         2,
-        1
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Player",
-      "pos": [
-        5,
-        17
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Light",
-      "pos": [
-        57,
-        17
-      ],
-      "size": [
-        1,
         2
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Star",
-      "pos": [
-        12,
-        9
-      ],
-      "size": [
-        1,
-        1
-      ],
-      "layer_number": 1
-    },
-    {
-      "type": "Spikes",
-      "pos": [
-        52,
-        15
-      ],
-      "size": [
-        2,
-        1
       ],
       "layer_number": 1
     }

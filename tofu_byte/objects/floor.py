@@ -3,7 +3,7 @@ from textual.app import RenderResult
 from textual.geometry import Offset, Size
 
 from tofu_byte.type_register import register
-from tofu_byte.mystatic import MyText
+from tofu_byte.objects.game_object import MyText
 from .base_object import BaseObject
 
 

@@ -24,7 +24,7 @@
 - [ ] Switch off visuals with flag
 - [ ] Show the name of the map (in game and editor)
 - [ ] Select elements in editor by dragin across screen
-- [ ]
+- [ ] Saving objects in map in order and properly linted
 
 # NICE TO HAVE
 

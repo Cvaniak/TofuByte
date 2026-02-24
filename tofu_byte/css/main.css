@@ -49,6 +49,11 @@ Spikes {
   background: $background;
 }
 
+Touret {
+  color: $success;
+  background: $background;
+}
+
 Star {
   color: $success;
   background: $background;

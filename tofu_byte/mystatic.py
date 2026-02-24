@@ -14,17 +14,6 @@ def minmax(value: int, min_v: int = 0, max_v: int = 255):
     return min(max(value, min_v), max_v)
 
 
-class MyText(Text):
-    def __eq__(self, other: object) -> bool:
-        if not isinstance(other, MyText):
-            return NotImplemented
-        return (
-            self.plain == other.plain
-            and self._spans == other._spans
-            and self.style == other.style
-        )
-
-
 class ScreenTitle(Static):
     def __init__(
         self,
@@ -65,7 +54,6 @@ class ScreenTitle(Static):
     def render(self) -> Text:
         result = Text()
 
-        # visible = [c for c in self.text if c != "\n"]
         total = max((self.w + self.h) * self.density, 1)
 
         x = 0
@@ -164,10 +152,7 @@ class YouLoseScreenTitle(ThemeScreenTitle):
 class PrimaryScreenTitle(ThemeScreenTitle): ...
 
 
-class GameObjectStatic(Static): ...
-
-
-class MapName(GameObjectStatic):
+class MapName(Static):
     def set_map(self, map_name: str):
         self.update(map_name)
 
@@ -198,7 +183,9 @@ class PointSystem:
         self.val += val
         self.update_display()
 
-    def is_finished(self) -> bool:
+    def is_finished(
+        self,
+    ) -> bool:
         return self.max_val <= self.val
 
     def clear(self):

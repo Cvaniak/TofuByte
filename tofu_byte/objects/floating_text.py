@@ -6,13 +6,13 @@ from textual.geometry import Offset, Size
 from textual.widgets import Input
 
 from tofu_byte.type_register import register
-from tofu_byte.mystatic import MyText
-from .base_object import BaseObject, LabeledInput
+from tofu_byte.objects.game_object import MyText
+from .base_object import BaseObject, LabeledInput, BaseObjectParameters
 from typing import Any
 
 
 @dataclass
-class TextObjectParameters:
+class TextObjectParameters(BaseObjectParameters):
     type: str
     pos: Offset
     size: Size
@@ -58,7 +58,7 @@ class FloatingText(BaseObject):
 
     def to_parameters(self) -> TextObjectParameters:
         return TextObjectParameters(
-            self.type_name, self.pos, self.size, self.layer_number, self.text_value
+            self.type_name, self.pos, self.layer_number, self.size, self.text_value
         )
 
     @classmethod
@@ -75,7 +75,7 @@ class FloatingText(BaseObject):
     def copy(self, **kwargs: Offset | Size | bool | int | str):
         k: dict[str, Offset | Size | bool | int | str] = {
             "pos": self.pos,
-            "size": self.size,
+            "size": self.m_size,
             "layer_number": self.layer_number,
             "editable": self.editable,
             "text_value": self.text_value,

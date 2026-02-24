@@ -15,6 +15,8 @@ from tofu_byte.objects.spikes import Spikes, SpikesDown  # noqa: F401
 from tofu_byte.objects.light import Light  # noqa: F401
 from tofu_byte.objects.stars import Star, EndBall  # noqa: F401
 from tofu_byte.objects.floating_text import FloatingText  # noqa: F401
+from tofu_byte.objects.touret import Touret  # noqa: F401
+from tofu_byte.objects.enemy import Enemy  # noqa: F401
 
 from typing import Any
 

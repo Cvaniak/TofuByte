@@ -10,7 +10,11 @@ from tofu_byte.screens.const import MENU_TEXT
 from textual import on
 from tofu_byte.mystatic import PrimaryScreenTitle
 
-from tofu_byte.screens.game_display import GameScreenContainer, EditorScreenContainer
+from tofu_byte.screens.game_display import (
+    GameScreenContainer,
+    EditorScreenContainer,
+    ScenarioScreenContainer,
+)
 from tofu_byte.screens.menu.map_loader import MapChain
 from tofu_byte.screens.screens import MenuScreenBase
 
@@ -21,6 +25,7 @@ class Menu(MenuScreenBase[None]):
             yield PrimaryScreenTitle(MENU_TEXT)
         with Container():
             yield Button("Start Game", id="map_loader", variant="success")
+            yield Button("Scenarios", id="scenarios", variant="primary")
             yield Button("Edit Map", id="map_editor", variant="primary")
             yield Button("Troubleshooting", id="troubleshooting", variant="primary")
             yield Button("About", id="about", variant="primary")
@@ -41,6 +46,10 @@ class Menu(MenuScreenBase[None]):
     @on(Button.Pressed, "#map_loader")
     async def map_loader(self):
         self.app.push_screen("map_loader", self.on_load_game)
+
+    @on(Button.Pressed, "#scenarios")
+    async def scenarios(self):
+        self.app.push_screen(ScenarioScreenContainer(0))
 
     @on(Button.Pressed, "#map_editor")
     async def map_editor(self):

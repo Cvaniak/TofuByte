@@ -1,43 +1,31 @@
-from typing import TYPE_CHECKING, List, Union
+from typing import List
+from random import randint
 
-from rich.style import Style
 from textual.geometry import Offset
 
-from tofu_byte.mystatic import MyText
-from tofu_byte.tools.tools import Direction
 
-if TYPE_CHECKING:
-    from tofu_byte.player.player import Player
-
-
-def only_x(vector: Offset):
-    return Offset(vector.x, 0)
-
-
-def only_y(vector: Offset):
-    return Offset(0, vector.y)
-
-
-class State:
+class BaseState:
     max_frame: int
     animation: List[str]
-    frame: Union[int, None] = 0
+    frame: int = 0
     direction: Offset = Offset(0, 0)
     immortal: bool = False
+    animation_cycles_completed: int = 0
 
     def __init__(
         self,
-        player: "Player",
         max_frame: int,
         animation: List[str],
         frame: int = 0,
         direction: Offset = Offset(0, 0),
     ) -> None:
-        self.player = player
-        self.max_frame = max_frame
+        actual_len_animation = len(animation) if len(animation) > 0 else 1
+        self.max_frame = max(max_frame, actual_len_animation)
+
         self.animation = animation
         self.frame = frame
         self.direction = direction
+        self.animation_cycles_completed = 0
 
     def enter(self):
         pass
@@ -45,34 +33,51 @@ class State:
     def exit(self):
         pass
 
-    def update(self):
-        self.player.offset += self.player.new_pos
+    def is_last_frame(self) -> bool:
+        return self.frame == self.max_frame - 1
 
-    def handle_input(self, directions_set: set[Direction]):
-        offset_for_move = Offset(0, 0)
-        if "l" in directions_set:
-            offset_for_move += Offset(-1, 0)
-        if "r" in directions_set:
-            offset_for_move += Offset(1, 0)
-        if offset_for_move != Offset(0, 0):
-            self.player.velocity = only_y(self.player.velocity) + offset_for_move
-
-    def show(self, invert_color: int = False):
-        bottom, top = self.player.color, self.player.color_sc
-        if invert_color:
-            bottom, top = self.player.color_sc, self.player.color
-
-        new_frame = MyText(self.get_frame(), style=Style(color=bottom, bgcolor=top))
-        if self.player.curr_frame != new_frame:
-            self.player.update(new_frame)
+    def tick(self):
+        if self.max_frame <= 1:
+            self.frame = 0
+            self.animation_cycles_completed += 1
+        else:
+            if (self.frame + 1) == self.max_frame:
+                self.animation_cycles_completed += 1
+            self.frame = (self.frame + 1) % self.max_frame
 
     def get_frame(self):
-        if self.frame is None:
-            return self.animation[0]
+        if self.max_frame == 0:
+            return self.animation[0] if self.animation else " "
 
-        if self.frame >= self.max_frame:
-            self.frame = 0
+        frame_idx = (self.frame * len(self.animation)) // self.max_frame
+        frame_idx = min(frame_idx, len(self.animation) - 1)
+        return self.animation[frame_idx]
 
-        frame = self.animation[(self.frame * len(self.animation)) // self.max_frame]
-        self.frame += 1
-        return frame
+    def get_random_frame(self):
+        if self.animation:
+            random_index = randint(0, len(self.animation) - 1)
+            return self.animation[random_index]
+        else:
+            return " "
+
+
+class RandomFrameState(BaseState):
+    def __init__(
+        self,
+        max_frame: int,
+        animation: List[str],
+        frame: int = 0,
+        direction: Offset = Offset(0, 0),
+        probability: int = 2,
+    ) -> None:
+        super().__init__(max_frame, animation, frame, direction)
+        self.last_frame = frame
+        self.probability = probability
+
+    def get_frame(self):
+        if self.max_frame == 0:
+            return self.animation[0] if self.animation else " "
+
+        if randint(0, self.probability) == 0:
+            self.last_frame = randint(0, len(self.animation) - 1)
+        return self.animation[self.last_frame]
