@@ -1,7 +1,7 @@
 from __future__ import annotations
 from dataclasses import asdict
 import pathlib
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING, Any, Optional
 
 from textual import events, work
 from textual.app import ComposeResult
@@ -17,7 +17,7 @@ from textual.events import Click, MouseEvent, MouseMove, ScreenResume, ScreenSus
 from textual.geometry import Offset, Size
 from textual.reactive import reactive
 from textual.screen import Screen
-from textual.widgets import Button, Input, Label, ListItem, ListView, Static
+from textual.widgets import Button, Input, Label, ListItem, ListView, Static, Switch
 from tofu_byte.config import DEBUG, GAME_VERSION, should_check_input_system
 from tofu_byte.game.events import (
     DisplayClicked,
@@ -35,19 +35,24 @@ from tofu_byte.game.events import (
 )
 from tofu_byte.game.input_manager import InputManager, create_input_manager
 from tofu_byte.objects.base_object import BaseObject
+from tofu_byte.objects.touret import Touret, TouretIdleState
+from tofu_byte.objects.enemy import Enemy
 from tofu_byte.objects.shared_widgets import LabeledInput
-from tofu_byte.player.player import Player
 from tofu_byte.screens.menu.end_screen import EditEndScreen, EndScreen
 
 from tofu_byte.game.display import Display
 
 from tofu_byte.screens.menu.map_loader import MapChain
 from tofu_byte.screens.screens import MenuScreenBase
+from tofu_byte.player.player import Player
 from tofu_byte.tools.loggerr import get_textlog
-from tofu_byte.game.game import Editor, Game
+from tofu_byte.game.game import Editor, Game, ScenarioScene
+from tofu_byte.game.scenarios import SCENARIOS
+from tofu_byte.screens.scenario_timeline_widget import ScenarioTimelineWidget
 from textual import on
+from tofu_byte.screens.player_state_debug_widget import PlayerStateDebugWidget
 
-from tofu_byte.mystatic import GameObjectStatic, LifePoints, Points, TimeDisplay
+from tofu_byte.mystatic import LifePoints, Points, TimeDisplay
 import json
 
 from tofu_byte.type_register import CLASS_REGISTRY
@@ -86,6 +91,152 @@ class GameObjectListItem(ListItem):
 
 class SceneScreenContainer(Screen[None]):
     pass
+
+
+class ScenarioScreenContainer(SceneScreenContainer):
+    BINDINGS = [
+        Binding("escape", "app.pop_screen", "Back to Menu"),
+        Binding("n", "next_step", "Next Step"),
+        Binding("space", "toggle_run", "Play/Pause"),
+        Binding("r", "reset_scenario", "Reset"),
+        Binding("l", "next_scenario", "Next Scenario"),
+        Binding("h", "prev_scenario", "Prev Scenario"),
+    ]
+
+    def __init__(self, scenario_index: int = 0) -> None:
+        self.scenario_index = scenario_index
+        self.scenario = SCENARIOS[self.scenario_index]
+        self.game: Optional[ScenarioScene] = None
+        super().__init__()
+        self.game_display = Display()
+        self.info_panel = Static("", classes="scenario-info")
+        self.timeline_widget = ScenarioTimelineWidget(
+            self.scenario.timeline, id="scenario-timeline"
+        )
+        self.player_state_debug_widget = PlayerStateDebugWidget(classes="debug-overlay")
+
+    def compose(self) -> ComposeResult:
+        with Horizontal(id="detached-wrapper"):
+            with Vertical(classes="left"):
+                yield self.info_panel
+                yield self.timeline_widget
+                yield Static(
+                    f"Step: 0/{len(self.scenario.timeline)}", id="step-counter"
+                )
+
+            with Vertical(classes="center"):
+                yield self.game_display
+
+            with Vertical(classes="right"):
+                yield Static("Scenarios")
+                yield Button("Next Scenario (→)", id="next-scenario", variant="primary")
+                yield Button("Prev Scenario (←)", id="prev-scenario", variant="primary")
+                yield Static(
+                    f"Scenario {self.scenario_index + 1}/{len(SCENARIOS)}",
+                    id="scenario-counter",
+                )
+                yield Button("Next Step (N)", id="next-step", variant="primary")
+                yield Button("Play/Pause (Space)", id="toggle-run", variant="success")
+                yield Button("Reset (R)", id="reset", variant="warning")
+                if DEBUG["player_state"]:
+                    yield self.player_state_debug_widget
+
+    async def on_mount(self) -> None:
+        await self.create_game()
+        self.update_info()
+
+    def update_player_state_debug_widget(self) -> None:
+        if self.player_state_debug_widget and self.game and self.game.player:
+            self.player_state_debug_widget.update_player_info(self.game.player)
+
+    def update_info(self):
+        self.info_panel.update(
+            f"[bold]{self.scenario.name}[/bold]\n\n{self.scenario.description}"
+        )
+        try:
+            self.query_one("#scenario-counter", Static).update(
+                f"Scenario {self.scenario_index + 1}/{len(SCENARIOS)}"
+            )
+        except NoMatches:
+            pass
+
+    def sync_ui(self):
+        if self.game:
+            step_count = self.game.step_index
+            total = len(self.scenario.timeline)
+            try:
+                self.query_one("#step-counter", Static).update(
+                    f"Step: {step_count}/{total}"
+                )
+
+                self.timeline_widget.highlight_step(step_count)
+            except NoMatches:
+                pass
+
+    async def create_game(self):
+        if self.game:
+            self.game_display.clear_all()
+        self.game = ScenarioScene(self, get_textlog(), scenario=self.scenario)
+        self.game.start()
+        self.timeline_widget.timeline = self.scenario.timeline
+        self.timeline_widget.rebuild_list()
+
+    def action_next_step(self):
+        if self.game:
+            self.game.next_step()
+
+    @on(Button.Pressed, "#next-step")
+    def on_next_step(self):
+        self.action_next_step()
+
+    def action_toggle_run(self):
+        if self.game:
+            self.game.run = not self.game.run
+
+    @on(Button.Pressed, "#toggle-run")
+    def on_toggle_run(self):
+        self.action_toggle_run()
+
+    async def action_reset_scenario(self):
+        await self.create_game()
+
+    @on(Button.Pressed, "#reset")
+    async def on_reset(self):
+        await self.action_reset_scenario()
+
+    async def action_next_scenario(self):
+        self.scenario_index = (self.scenario_index + 1) % len(SCENARIOS)
+        self.scenario = SCENARIOS[self.scenario_index]
+        await self.create_game()
+        self.update_info()
+
+    @on(Button.Pressed, "#next-scenario")
+    async def on_next_scenario(self):
+        await self.action_next_scenario()
+
+    async def action_prev_scenario(self):
+        self.scenario_index = (self.scenario_index - 1) % len(SCENARIOS)
+        self.scenario = SCENARIOS[self.scenario_index]
+        await self.create_game()
+        self.update_info()
+
+    @on(Button.Pressed, "#prev-scenario")
+    async def on_prev_scenario(self):
+        await self.action_prev_scenario()
+
+    def update(self):
+        self.sync_ui()
+        if DEBUG["player_state"]:
+            self.update_player_state_debug_widget()
+
+    def mount_drawable(self, drawable: Any) -> None:
+        self.game_display.mount_drawable(drawable)
+
+    def delete_drawable(self, drawable: Any) -> None:
+        self.game_display.delete_drawable(drawable)
+
+    def stats_clear(self, config: Any):
+        pass
 
 
 class ListOfObjects(ListView):
@@ -168,7 +319,7 @@ class EditorScreenContainer(SceneScreenContainer):
 
     def animate_list_objects(self):
         for obj in self.objects:
-            obj.reload()
+            obj.update_visuals()
 
     async def mouse_object_focus(self, event: MouseEvent, object: BaseObject | Player):
         if self.selected_objects or event.ctrl:
@@ -328,6 +479,65 @@ class EditorScreenContainer(SceneScreenContainer):
                 continue
             object.text_value = event.value
 
+    @on(Input.Changed, "#touret_shoot_interval")
+    def on_touret_shoot_interval(self, event: Input.Changed):
+        if not event.value.isnumeric():
+            return
+        if self.selected_objects:
+            obj = self.selected_objects[0]
+            if isinstance(obj, Touret):
+                obj.shoot_interval = int(event.value)
+                obj.update_visuals()
+
+    @on(Input.Changed, "#touret_laser_lifetime")
+    def on_touret_laser_lifetime(self, event: Input.Changed):
+        if not event.value.isnumeric():
+            return
+        if self.selected_objects:
+            obj = self.selected_objects[0]
+            if isinstance(obj, Touret):
+                obj.laser_lifetime = int(event.value)
+                obj.update_visuals()
+
+    @on(Input.Changed, "#touret_laser_distance")
+    def on_touret_laser_distance(self, event: Input.Changed):
+        if not event.value.isnumeric():
+            return
+        if self.selected_objects:
+            obj = self.selected_objects[0]
+            if isinstance(obj, Touret):
+                obj.laser_distance = int(event.value)
+                obj.update_visuals()
+
+    @on(Switch.Changed, "#touret_direction_x")
+    def on_touret_direction_x(self, event: Switch.Changed):
+        if self.selected_objects:
+            obj = self.selected_objects[0]
+            if isinstance(obj, Touret):
+                direction = 1 if event.value else -1
+                obj.direction = Offset(direction, 0)
+                obj.anim_state = TouretIdleState(obj)
+                obj.update_visuals()
+
+    @on(Input.Changed, "#enemy_move_interval")
+    def on_enemy_move_interval(self, event: Input.Changed):
+        if not event.value.isnumeric():
+            return
+        if self.selected_objects:
+            obj = self.selected_objects[0]
+            if isinstance(obj, Enemy):
+                obj.move_interval = int(event.value)
+                obj.update_visuals()
+
+    @on(Switch.Changed, "#enemy_direction")
+    def on_enemy_direction(self, event: Switch.Changed):
+        if self.selected_objects:
+            obj = self.selected_objects[0]
+            if isinstance(obj, Enemy):
+                direction = 1 if event.value else -1
+                obj.move_direction = direction
+                obj.update_visuals()
+
     @on(Button.Pressed, "#map_save")
     def on_map_save(self, event: Button.Pressed):
         if self.game is None:
@@ -396,7 +606,6 @@ class EditorScreenContainer(SceneScreenContainer):
     async def on_mouse_move(self, event: MouseMove):
         if event.button == 0:
             return
-        # TODO: Check if inside display
 
         for object in self.selected_objects:
             if event.ctrl:
@@ -475,8 +684,6 @@ class EditorScreenContainer(SceneScreenContainer):
     async def on_object_layer_number_change(self, message: LayerNumberChange):
         self.game_display.resort_layers()
 
-    # ===== Handle key events =====
-
     async def action_escape(self):
         def check_if_restart(action: str) -> None:
             if action == "resume":
@@ -503,10 +710,8 @@ class EditorScreenContainer(SceneScreenContainer):
             get_textlog(),
             game_file=self.map_chain.current_map(),
         )
-        # self.game.objects.update(set(self.objects))
 
     def delete_game(self):
-        # TODO: Not used I think
         get_textlog().write("Delete game")
         if self.game is not None:
             self.game.end_game()
@@ -514,21 +719,19 @@ class EditorScreenContainer(SceneScreenContainer):
         self.game_display.clear_all()
 
     async def end_game(self, win: bool = True):
-        # TODO: Not used I think
         assert False
 
     async def on_end_game_dismiss(self, action: str):
-        # TODO: Not used I think
         assert False
         if action == "to_menu":
             self.app.switch_screen("menu")
         elif action == "restart":
             await self.create_game()
 
-    def mount_drawable(self, drawable: GameObjectStatic) -> None:
+    def mount_drawable(self, drawable: Any) -> None:
         self.game_display.mount_drawable(drawable)
 
-    def delete_drawable(self, drawable: GameObjectStatic) -> None:
+    def delete_drawable(self, drawable: Any) -> None:
         self.game_display.delete_drawable(drawable)
 
     def stats_clear(self, config: MapConfigValues):
@@ -541,7 +744,6 @@ class CheckInputSystemScreen(MenuScreenBase[bool]):
         super().__init__()
 
     def compose(self) -> ComposeResult:
-        # TODO: Fix CSS and reword
         yield Grid(
             Label(
                 ("Press any movement key to start!\n"),
@@ -608,6 +810,7 @@ class GameScreenContainer(SceneScreenContainer):
         self.checking_input = False
         self.is_reseting = False
         self.test_only = test_only
+        self.player_state_debug_widget = PlayerStateDebugWidget(classes="debug-overlay")
 
     # ===== Compose =====
 
@@ -621,7 +824,8 @@ class GameScreenContainer(SceneScreenContainer):
             with Vertical(classes="right"):
                 yield self.points
                 yield self.hp_points
-                # yield self.fps
+                if DEBUG["player_state"]:
+                    yield self.player_state_debug_widget
         if DEBUG["footer"]:
             yield self.footer
 
@@ -633,13 +837,17 @@ class GameScreenContainer(SceneScreenContainer):
     def on_mount(self):
         self.input_manager.start()
 
+    def update_player_state_debug_widget(self) -> None:
+        if self.player_state_debug_widget and self.game and self.game.player:
+            self.player_state_debug_widget.update_player_info(self.game.player)
+
     def on_unmount(self):
         self.input_manager.stop()
 
     def update(self):
         self.timer.update_time()
-
-    # ===== Handle screens =====
+        if DEBUG["player_state"]:
+            self.update_player_state_debug_widget()
 
     @on(ScreenResume)
     @work
@@ -673,20 +881,16 @@ class GameScreenContainer(SceneScreenContainer):
         if self.game is not None:
             self.game.pause_game()
 
-    # ===== Handle key events =====
-    # TODO: Little broken
     async def action_start(self, force: bool = False):
         if self.game and (DEBUG["step"] or force):
             self.game.resume_game()
             self.timer.resume()
 
-    # TODO: Little broken
     async def action_stop(self, force: bool = False):
         if self.game and (DEBUG["step"] or force):
             self.game.pause_game()
             self.timer.stop()
 
-    # TODO: Little broken
     async def action_step(self):
         if self.game and DEBUG["step"]:
             self.game.single_step()
@@ -728,6 +932,7 @@ class GameScreenContainer(SceneScreenContainer):
             get_textlog(),
             game_file=self.map_chain.current_map(),
         )
+        self.game.start()
 
         self.timer.start()
 
@@ -783,10 +988,10 @@ class GameScreenContainer(SceneScreenContainer):
         self.hp_points.set_max(config.hp)
         self.end_ball_to_win = config.winning_ball
 
-    def mount_drawable(self, drawable: GameObjectStatic) -> None:
+    def mount_drawable(self, drawable: Any) -> None:
         self.game_display.mount_drawable(drawable)
 
-    def delete_drawable(self, drawable: GameObjectStatic) -> None:
+    def delete_drawable(self, drawable: Any) -> None:
         self.game_display.delete_drawable(drawable)
 
     # ===== Handle Game Events =====

@@ -7,7 +7,7 @@ from textual.message import Message
 
 
 if TYPE_CHECKING:
-    from tofu_byte.objects.base_object import BaseObject
+    from tofu_byte.objects.game_object import GameObject
     from tofu_byte.player.player import Player
 
 
@@ -48,7 +48,7 @@ class DisplayMouseHover(Message):
 
 
 class ObjectClicked(Message):
-    def __init__(self, event: events.Click, object: BaseObject) -> None:
+    def __init__(self, event: events.Click, object: GameObject) -> None:
         super().__init__()
         self.event = event
         self.object = object
@@ -62,7 +62,7 @@ class PlayerClicked(Message):
 
 
 class ObjectMouseDown(Message):
-    def __init__(self, event: events.MouseDown, object: BaseObject) -> None:
+    def __init__(self, event: events.MouseDown, object: GameObject) -> None:
         super().__init__()
         self.event = event
         self.object = object
@@ -88,5 +88,6 @@ class ObjectResized(Message):
 
 
 class LayerNumberChange(Message):
-    def __init__(self) -> None:
+    def __init__(self, layer_number: int) -> None:
         super().__init__()
+        self.layer_number = layer_number

@@ -56,3 +56,22 @@ FooterCustom {
     }
   }
 }
+
+PlayerStateDebugWidget {
+  height: 22;
+  margin-left: 1;
+  margin-right: 1;
+}
+
+.player-debug-title {
+  text-align: center;
+  text-style: bold;
+  color: $primary;
+  /* margin-bottom: 1; */
+  /* border: outer $secondary; */
+}
+
+#player-state-info {
+  width: 100%;
+  height: auto;
+}

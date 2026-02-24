@@ -1,0 +1,140 @@
+{
+  "objects": [
+    {
+      "type": "Star",
+      "pos": [
+        38,
+        14
+      ],
+      "layer_number": 1,
+      "size": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "EndBall",
+      "pos": [
+        2,
+        17
+      ],
+      "layer_number": 1,
+      "size": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "Light",
+      "pos": [
+        2,
+        8
+      ],
+      "layer_number": 1,
+      "size": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        19
+      ],
+      "layer_number": 1,
+      "size": [
+        32,
+        1
+      ]
+    },
+    {
+      "type": "Light",
+      "pos": [
+        9,
+        8
+      ],
+      "layer_number": 1,
+      "size": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        0,
+        12
+      ],
+      "layer_number": 1,
+      "size": [
+        48,
+        2
+      ]
+    },
+    {
+      "type": "Touret",
+      "pos": [
+        32,
+        16
+      ],
+      "layer_number": 1,
+      "size": [
+        2,
+        2
+      ],
+      "shoot_interval": 15,
+      "laser_lifetime": 15,
+      "laser_distance": 10,
+      "direction": [
+        1,
+        0
+      ]
+    },
+    {
+      "type": "Floor",
+      "pos": [
+        32,
+        18
+      ],
+      "layer_number": 1,
+      "size": [
+        32,
+        2
+      ]
+    },
+    {
+      "type": "Touret",
+      "pos": [
+        46,
+        10
+      ],
+      "layer_number": 1,
+      "size": [
+        2,
+        2
+      ],
+      "shoot_interval": 90,
+      "laser_lifetime": 60,
+      "laser_distance": 30,
+      "direction": [
+        -1,
+        0
+      ]
+    },
+    {
+      "type": "Player",
+      "pos": [
+        5,
+        8
+      ],
+      "layer_number": 1
+    }
+  ],
+  "hp": 1,
+  "authors": [
+    "Cvaniak"
+  ],
+  "game_version": "0.3.0",
+  "name": "04_bar"
+}

@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import Any
 
 from textual import events
 from textual.app import ComposeResult
@@ -7,7 +8,6 @@ from textual.geometry import Size
 from textual.widget import Widget
 from rich.color import Color
 from tofu_byte.game.events import DisplayClicked, DisplayMouseHover
-from tofu_byte.mystatic import GameObjectStatic
 
 
 class Display(Container):
@@ -22,7 +22,7 @@ class Display(Container):
         border_color: str = "#ffaa00",
     ) -> None:
         super().__init__(*children, name=name, id=id, classes=classes)
-        self.drawables: list[GameObjectStatic] = []
+        self.drawables: list[Any] = []
         self.can_focus = True
         self.screen_size = screen_size
         self.styles.min_width = self.styles.max_width = screen_size.width
@@ -40,14 +40,14 @@ class Display(Container):
     def compose(self) -> ComposeResult:
         yield from self.drawables
 
-    def mount_drawable(self, drawable: GameObjectStatic) -> None:
+    def mount_drawable(self, drawable: Any) -> None:
         self.drawables.append(drawable)
         self.mount(drawable)
         self.is_draggin = False
         self.can_focus = False
         self.resort_layers()
 
-    def delete_drawable(self, drawable: GameObjectStatic) -> None:
+    def delete_drawable(self, drawable: Any) -> None:
         self.drawables = [note for note in self.drawables if note != drawable]
         self.remove_children([drawable])
         drawable.remove()

@@ -7,9 +7,6 @@ Terminal game with sweet block of [tofu](https://fonts.google.com/knowledge/glos
 
 ![output](https://github.com/user-attachments/assets/6911bb1a-72b5-4c7a-8794-70a33552f1e1)
 
-
-
-
 ## How to install
 
 ### Prerequisites
@@ -100,7 +97,7 @@ Some tutorial will be provided soon.
 There are some additional tools I have used during developed. They show some stats and other things that helped debug:
 
 ```bash
-uv run textual run --dev tofu_byte.command_line:run --debug contact_dir,step,fps,footer
+uv run textual run --dev tofu_byte.command_line:run --debug contact_dir,step,fps,footer,player_stats
 ```
 
 ## Speciall thanks

@@ -1,12 +1,17 @@
-from collections import defaultdict
 import json
 from pathlib import Path
 
 from platformdirs import user_config_dir, user_data_dir
 
-DEBUG: dict[str, str] = defaultdict(str)
+DEBUG: dict[str, bool] = {
+    "fps": False,
+    "step": False,
+    "footer": False,
+    "contact_dir": False,
+    "player_state": False,
+}
 
-GAME_VERSION = "0.1.1"
+GAME_VERSION = "0.3.0"
 
 APP_NAME = "TofuByte"
 APP_AUTHOR = "Cvaniak"

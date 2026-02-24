@@ -4,10 +4,10 @@ from textual.app import RenderResult
 from textual.geometry import Offset, Size
 
 from tofu_byte.game.events import EndBallCollected, PointCollected
-from tofu_byte.objects.faze import Faze
-from tofu_byte.player.collision import CollisionEvent
+from tofu_byte.objects.state import BaseState
+from tofu_byte.game.collision_manager import CollisionEvent
 from tofu_byte.type_register import register
-from tofu_byte.mystatic import MyText
+from tofu_byte.objects.game_object import MyText
 from .base_object import BaseObject
 from random import randint
 from typing import TYPE_CHECKING, Any
@@ -22,7 +22,6 @@ class Star(BaseObject):
     blocks: bool = False
     triggers: bool = True
     resizeble: bool = False
-    frames: list[str] = ["▪", "◆"]
 
     def __init__(
         self,
@@ -31,35 +30,36 @@ class Star(BaseObject):
         *args: Any,
         **kwargs: Any,
     ):
-        super().__init__(pos, size, *args, **kwargs)
-        self.animation = Faze(
-            0,
-            randint(10, 20),
-            self.frames,
+        if not kwargs.get("anim_state", None):
+            star_state = BaseState(
+                max_frame=randint(20, 45), animation=["▪", "◆"], frame=randint(0, 20)
+            )
+            kwargs["anim_state"] = star_state
+        super().__init__(
+            pos,
+            size,
+            *args,
+            **kwargs,
         )
-        self.update(self.render())
+        self.anim_state.frame = randint(0, self.anim_state.max_frame)
 
     def default_colors(self) -> tuple[str, str]:
         color = self.app.theme_variables["success"]
         background = self.app.theme_variables["background"]
         return color, background
 
-    def reload(self):
-        if randint(0, 2):
-            return
-
-        new_frame = self.render()
-        if new_frame != self.curr_frame:
-            self.curr_frame = new_frame
-            self.update(new_frame)
+    def update_logic(self):
+        super().update_logic()
 
     def on_collision(self, event: CollisionEvent) -> None:
-        self.post_message(PointCollected(1))
-        self.should_remove = True
+        super().on_collision(event)
+        if event.obj.type_name == "Player":
+            self.post_message(PointCollected(1))
+            self.should_remove = True
 
     def render(self) -> RenderResult:
         style = self.set_colors()
-        return MyText(self.animation.get_frame(), style=style)
+        return MyText(self.anim_state.get_frame(), style=style)
 
 
 @register
@@ -68,13 +68,6 @@ class EndBall(Star):
     blocks: bool = False
     triggers: bool = True
     resizeble: bool = False
-    frames: list[str] = [
-        "🬖🬅",
-        "🬋🬋",
-        "🬈🬢",
-        "🬉🬓",
-        "🬦🬄",
-    ]
 
     def __init__(
         self,
@@ -83,21 +76,25 @@ class EndBall(Star):
         *args: Any,
         **kwargs: Any,
     ):
-        super().__init__(pos, size, *args, **kwargs)
-        self.animation = Faze(
-            0,
-            25,
-            self.frames,
+        end_ball_faze = BaseState(
+            max_frame=25,
+            animation=["🬖🬅", "🬋🬋", "🬈🬢", "🬉🬓", "🬦🬄"],
+            frame=randint(0, 10),
         )
-        self.update(self.render())
+        super().__init__(
+            pos,
+            size,
+            *args,
+            anim_state=end_ball_faze,
+            **kwargs,
+        )
 
-    def reload(self):
-        new_frame = self.render()
-        if new_frame != self.curr_frame:
-            self.curr_frame = new_frame
-            self.update(new_frame)
+    def update_logic(self):
+        pass
 
     def on_collision(self, event: CollisionEvent) -> None:
-        self.post_message(EndBallCollected())
-        event.player.win()
-        self.should_remove = True
+        super().on_collision(event)
+        if event.obj.type_name == "Player":
+            self.post_message(EndBallCollected())
+            event.obj.win()
+            self.should_remove = True

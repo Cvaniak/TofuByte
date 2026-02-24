@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from textual.app import RenderResult
 
-from tofu_byte.player.collision import CollisionEvent, Side
+from tofu_byte.game.collision_manager import CollisionEvent, Side
 from tofu_byte.type_register import register
-from tofu_byte.mystatic import MyText
+from tofu_byte.objects.game_object import MyText
 
 from .base_object import BaseObject
 
@@ -19,7 +19,7 @@ class Spikes(BaseObject):
     triggers: bool = True
     icon = ["◢", "◣"]
     max_size = Size(-1, 1)
-    contact_direction = Side.BOTTOM
+    contact_direction = Side.TOP
 
     def __init__(
         self,
@@ -65,16 +65,21 @@ class Spikes(BaseObject):
     def on_collision(self, event: CollisionEvent) -> None:
         super().on_collision(event)
 
-        if self.occupies_dead_zone(event.player.offset):
-            event.player.damage()
+        if event.obj.type_name != "Player":
             return
-        if self.occupies_spike_zone(event.player.offset):
-            event.player.damage()
+
+        player = event.obj
+
+        if self.occupies_dead_zone(player.pos):
+            player.damage()
+            return
+        if self.occupies_spike_zone(player.pos):
+            player.damage()
             return
         if self.occupies_spike_zone(event.target_pos) and event.side in [
             self.contact_direction
         ]:
-            event.player.damage()
+            player.damage()
             return
 
 
@@ -82,10 +87,12 @@ class Spikes(BaseObject):
 class SpikesDown(Spikes):
     type_name = "SpikesDown"
     icon = ["◥", "◤"]
-    contact_direction = Side.TOP
+    contact_direction = Side.BOTTOM
 
     def occupies_dead_zone(self, pos: Offset):
         return (
             self.pos.x + 1 <= pos.x < self.pos.x + self.m_size.width - 1
-            and self.pos.y <= pos.y < self.pos.y - 1
+            and self.pos.y + self.m_size.height
+            <= pos.y
+            < self.pos.y + self.m_size.height + 1
         )

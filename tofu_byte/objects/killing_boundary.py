@@ -4,7 +4,7 @@ from typing import Any
 from textual.geometry import Offset, Size
 
 from tofu_byte.objects.base_object import BaseObject
-from tofu_byte.player.collision import CollisionEvent
+from tofu_byte.game.collision_manager import CollisionEvent
 from tofu_byte.type_register import register
 
 
@@ -12,6 +12,8 @@ from tofu_byte.type_register import register
 class KillingBondary(BaseObject):
     type_name = "KillingBondary"
     triggers = True
+    blocks = False
+    is_global_collider = True
 
     def __init__(
         self,
@@ -26,7 +28,9 @@ class KillingBondary(BaseObject):
         return not super().occupies_tile(pos)
 
     def on_collision(self, event: CollisionEvent) -> None:
-        event.player.damage()
+        super().on_collision(event)
+        if event.obj.type_name == "Player":
+            event.obj.damage()
 
     def watch_editable(self, new_value: bool):
         if new_value:
