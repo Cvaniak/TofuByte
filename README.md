@@ -7,6 +7,9 @@ Terminal game with sweet block of [tofu](https://fonts.google.com/knowledge/glos
 
 ![output](https://github.com/user-attachments/assets/6911bb1a-72b5-4c7a-8794-70a33552f1e1)
 
+> [!WARNING]  
+> Game uses Pynput to handle input. If you got banner with input system problems, read the Troubleshooting section.
+
 ## How to install
 
 ### Prerequisites
@@ -70,6 +73,7 @@ Currently, you can try the following:
   - Ghostty (requires `sudo`)
   - Terminator (requires `sudo`)
 - On macOS, you can try running with `sudo` or refer to [this StackOverflow comment](https://stackoverflow.com/a/54659886) for alternative solutions.
+- Windows WSL - As the
 
 Further reading and potential solutions can be found in the [Pynput Documentation](https://pynput.readthedocs.io/en/latest/limitations.html#mac-osx).
 
@@ -83,10 +87,14 @@ Also if you found solution for your problem, share this in the issue so it can h
 
 You can edit and create maps with built in editor!
 
+> [!WARNING]  
+> Currently when creating new map it is created inside user directory, hard to access. You can "Download" map from editor, to get in directory from which you run the app.
+
 There are some keybindings worth to know:
 
-- ctrl+mouse_move - resize
+- ctrl+mouse_move - resize selected
 - ctrl+mouse_click - selects multiple
+- ctrl+v - to copy-paste selected objects
 
 Some tutorial will be provided soon.
 
