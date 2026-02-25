@@ -5,7 +5,7 @@
 
 Terminal game with sweet block of [tofu](https://fonts.google.com/knowledge/glossary/tofu) character!
 
-![output](https://github.com/user-attachments/assets/6911bb1a-72b5-4c7a-8794-70a33552f1e1)
+![quick-demo](https://github.com/user-attachments/assets/9a9481f1-b048-4f3d-b395-df138211279b)
 
 > [!WARNING]  
 > Game uses Pynput to handle input. If you got banner with input system problems, read the Troubleshooting section.
