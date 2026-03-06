@@ -112,7 +112,28 @@ EDIT_GAME = """
          ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
 """
 
+COMMUNITY_MAPS = """
+ ██████╗ ██████╗ ███╗   ███╗███╗   ███╗██╗   ██╗███╗   ██╗██╗████████╗██╗   ██╗
+██╔════╝██╔═══██╗████╗ ████║████╗ ████║██║   ██║████╗  ██║██║╚══██╔══╝╚██╗ ██╔╝
+██║     ██║   ██║██╔████╔██║██╔████╔██║██║   ██║██╔██╗ ██║██║   ██║    ╚████╔╝ 
+██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██║   ██║██║╚██╗██║██║   ██║     ╚██╔╝  
+╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██║   ██║      ██║   
+ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝   ╚═╝      ╚═╝   
+                         ███╗   ███╗ █████╗ ██████╗ ███████╗                   
+                         ████╗ ████║██╔══██╗██╔══██╗██╔════╝                   
+                         ██╔████╔██║███████║██████╔╝███████╗                   
+                         ██║╚██╔╝██║██╔══██║██╔═══╝ ╚════██║                   
+                         ██║ ╚═╝ ██║██║  ██║██║     ███████║                   
+                         ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚══════╝        
+"""
+
 ABOUT_AUTHOR_BODY = """
 If you have suggestion, issue or problem file a ticket in
 https://github.com/Cvaniak/TofuByte.
+"""
+
+COMMUNITY_MAPS_DISCLAIMER = """
+This menu allows you to browse community maps from GitHub under 'tofubyte-map' topic.
+Please note that these maps are not maintained by the TofuByte author.
+You can download these maps using this menu or manually by following the guide in the README.
 """

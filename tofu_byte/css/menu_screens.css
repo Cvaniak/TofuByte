@@ -1,5 +1,3 @@
-/* menu_screens.css */
-
 /* --- THEME VARIABLES ------------------------------------------ */
 /* Border Definitions */
 $border-style-main: heavy;
@@ -219,5 +217,53 @@ CheckInputSystemScreen {
     height: 1fr;
     width: 1fr;
     content-align: center middle;
+  }
+}
+
+GitHubMapsBrowser {
+  .body {
+    align: center top;
+
+    Static {
+      width: 66;
+    }
+  }
+
+  .repo-widget {
+    width: 80;
+    height: auto;
+    border: $box-border-type $primary;
+    margin: 1 0;
+    padding: 1;
+  }
+
+  .repo-info {
+    width: 100%;
+    height: auto;
+    content-align: left middle;
+    align: left middle;
+  }
+
+  .repo-name {
+    text-style: bold;
+    color: $primary;
+  }
+
+  .repo-owner {
+    text-style: italic;
+    color: $text-muted;
+  }
+
+  .repo-stars {
+    color: $success;
+  }
+
+  .repo-url {
+    color: $text-muted;
+  }
+
+  .repo-download {
+    margin-top: 1;
+    width: 100%;
   }
 }

@@ -12,7 +12,7 @@ DEBUG: dict[str, bool] = {
     "scenarios": False,
 }
 
-GAME_VERSION = "0.3.2"
+GAME_VERSION = "0.4.0"
 
 APP_NAME = "TofuByte"
 APP_AUTHOR = "Cvaniak"

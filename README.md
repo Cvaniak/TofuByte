@@ -100,6 +100,34 @@ Some tutorial will be provided soon.
 
 <img width="2290" height="1348" alt="Screenshot_20260210_232854" src="https://github.com/user-attachments/assets/533fb464-74d4-47f9-bccf-cb88b3ccb4c6" />
 
+## Community Maps
+
+TofuByte supports community-created maps! You can browse them on GitHub by searching for the `tofubyte-map` topic.
+
+> [!WARNING]
+> The author does not maintain these community maps and takes no responsibility for their content or any consequences arising from their download and use. Please make this game a safe and fun place to be.
+
+Explore community maps on GitHub: [https://github.com/topics/tofubyte-map](https://github.com/topics/tofubyte-map)
+
+To play a community map:
+
+1. Download the `.json` map file from GitHub.
+2. Place the downloaded `.json` file into your custom maps directory.
+   This directory is typically located at `~/.local/share/TofuByte/maps/custom_maps` on Linux, but the exact path might vary depending on your operating system.
+
+## Contributing Your Own Maps to GitHub
+
+If you've created a map you'd like to share with the TofuByte community and make it discoverable through the in-game browser, follow these steps:
+
+1.  **Create a New GitHub Repository:** Create a new public repository on GitHub for your map.
+2.  **Upload Your Map File:** Add your `.json` map file (created using the in-game editor) to this new repository. It's recommended to include a `README.md` in your repository with a description of your map, screenshots, and any special instructions.
+3.  **Add the `tofubyte-map` Topic:** To make your repository discoverable by the TofuByte community maps browser, you _must_ add the `tofubyte-map` topic to your repository.
+    - On your GitHub repository page, look for the "About" section on the right sidebar.
+    - Click on the gear icon (⚙️) or "Manage topics" to edit topics.
+    - Add `tofubyte-map` to the list of topics and save your changes.
+
+Your map will now be browsable in the TofuByte client!
+
 ## Development
 
 There are some additional tools I have used during developed. They show some stats and other things that helped debug:

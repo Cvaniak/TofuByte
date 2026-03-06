@@ -22,6 +22,9 @@ from tofu_byte.tools.map_utils import create_empty_map
 user_maps_dir = user_dir / "maps"
 user_maps_dir.mkdir(parents=True, exist_ok=True)
 
+user_creations_dir = user_maps_dir / "custom_maps"
+user_creations_dir.mkdir(parents=True, exist_ok=True)
+
 
 class MyPath(NamedTuple):
     path: Path
@@ -52,63 +55,59 @@ class MapChain:
         return self.current_index + 1 < len(self.maps)
 
 
-USER_MAPS_PACKAGE = MyPath(user_maps_dir, False, True)
-
-
-def user_map(name: str) -> Path:
-    return Path(user_maps_dir / f"{name}.json")
-
-
-def list_builtin_root() -> list[MyPath]:
+def list_root_maps() -> list[MyPath]:
     items: list[MyPath] = []
-    packages: list[MyPath] = []
-    custom: list[MyPath] = []
 
-    # builtin packages / maps
     for t in res.files("tofu_byte.maps").iterdir():
         if t.is_dir() and t.name != "__pycache__":
-            packages.append(MyPath(Path(t), True, True))
+            items.append(MyPath(Path(t), True, True))
         elif t.name.endswith(".json"):
             with res.as_file(t) as rp:
                 items.append(MyPath(Path(rp), True))
 
-    if any(user_maps_dir.iterdir()):
-        custom.append(USER_MAPS_PACKAGE)
-
-    return (
-        sorted(packages, key=lambda x: x.path.name)
-        + sorted(items, key=lambda x: x.path.name)
-        + custom
-    )
-
-
-def list_maps_in(path: Path) -> list[MyPath]:
-    items: list[MyPath] = []
-    packages: list[MyPath] = []
-
-    for p in path.iterdir():
+    for p in user_maps_dir.iterdir():
         if p.is_dir() and p.name != "__pycache__":
-            packages.append(MyPath(Path(p), path != user_maps_dir, True))
-        elif p.suffix == ".json":
-            items.append(MyPath(Path(p), path != user_maps_dir))
+            items.append(MyPath(Path(p), False, True))
 
-    return sorted(packages, key=lambda x: x.path.name) + sorted(
-        items, key=lambda x: x.path.name
-    )
+    return sorted(items, key=lambda x: x.path.name)
+
+
+def list_maps_in(path: MyPath) -> list[MyPath]:
+    items: list[MyPath] = []
+
+    for p in path.path.iterdir():
+        if p.is_dir() and p.name != "__pycache__":
+            is_builtin = path.builtin
+            items.append(MyPath(Path(p), is_builtin, True))
+        elif p.suffix == ".json":
+            is_builtin = path.builtin
+            items.append(MyPath(Path(p), is_builtin))
+
+    return sorted(items, key=lambda x: x.path.name)
 
 
 class MapButton(Button):
-    def __init__(self, path: MyPath, *args: Any, **kwargs: Any):
-        self.is_dir: bool = path.is_dir
-        self.path: Path = path.path
+    def __init__(self, my_path: MyPath, *args: Any, **kwargs: Any):
+        self.my_path: MyPath = my_path
+        self.is_dir: bool = my_path.is_dir
+        self.path: Path = my_path.path
 
-        text = path.path.stem
+        text = my_path.path.stem
         if text.split("_")[0].isnumeric():
             text = text.partition("_")[2].replace("_", " ")
-        if path.builtin:
-            text = "⭐ " + text
 
-        kwargs["variant"] = "warning" if path.is_dir else "primary"
+        if my_path.builtin:
+            text = "⭐ " + text
+            if my_path.is_dir:
+                kwargs["variant"] = "success"
+            else:
+                kwargs["variant"] = "primary"
+        else:
+            if my_path.is_dir:
+                kwargs["variant"] = "warning"
+            else:
+                kwargs["variant"] = "primary"
+
         super().__init__(text, *args, **kwargs)
 
 
@@ -117,6 +116,10 @@ class CreateNewMapScreen(ModalScreen[NewMapData]):
         Binding("enter", "create", "Create"),
         Binding("escape", "cancel", "Cancel"),
     ]
+
+    def __init__(self, target_dir: Path | None = None, *args: Any, **kwargs: Any):
+        super().__init__(*args, **kwargs)
+        self.target_dir = target_dir if target_dir is not None else user_creations_dir
 
     def compose(self) -> ComposeResult:
         yield Grid(
@@ -138,9 +141,9 @@ class CreateNewMapScreen(ModalScreen[NewMapData]):
             self.notify("Map name can not be empty.", severity="warning")
             return
 
-        target = user_map(name)
-        if target.exists():
-            self.notify(f"Map {target} already exists!", severity="error")
+        new_map_file = self.target_dir / f"{name}.json"
+        if new_map_file.exists():
+            self.notify(f"Map {new_map_file} already exists!", severity="error")
             input_widget.add_class("error")
             return
 
@@ -166,9 +169,9 @@ class CreateNewMapScreen(ModalScreen[NewMapData]):
 
 
 class MapLoader(MenuScreenBase[MapChain]):
-    def __init__(self, start_path: Path | None = None) -> None:
+    def __init__(self, current_path: MyPath | None = None) -> None:
         super().__init__()
-        self.current_path: Path | None = start_path
+        self.current_path: MyPath | None = current_path
 
     def compose(self) -> ComposeResult:
         with Container():
@@ -181,24 +184,31 @@ class MapLoader(MenuScreenBase[MapChain]):
     def on_mount(self) -> None:
         self.update()
 
-    def update(self) -> None:
+    def _update_map_list_and_focus(self) -> None:
         scroll = self.query_one(VerticalScroll)
         scroll.remove_children()
 
         if self.current_path is None:
-            items = list_builtin_root()
+            items = list_root_maps()
         else:
             items = list_maps_in(self.current_path)
 
-        for p in items:
-            scroll.mount(MapButton(p, classes="map_button"))
+        buttons = [MapButton(item, classes="map_button") for item in items]
+        for button in buttons:
+            scroll.mount(button)
+
+        if items:
+            self.call_after_refresh(buttons[0].focus)
+
+    def update(self) -> None:
+        self._update_map_list_and_focus()
 
     @on(Button.Pressed, ".map_button")
     async def handle_press(self, event: Button.Pressed) -> None:
         button = cast(MapButton, event.button)
 
         if button.is_dir:
-            self.current_path = button.path
+            self.current_path = button.my_path
             self.update()
             return
 
@@ -210,11 +220,17 @@ class MapLoader(MenuScreenBase[MapChain]):
             self.dismiss(MapChain(0, [Path(button.path)]))
 
     def action_go_back(self):
-        if self.current_path is not None:
+        if self.current_path is None:
+            self.app.pop_screen()
+        elif self.current_path.builtin:
             self.current_path = None
             self.update()
         else:
-            self.app.pop_screen()
+            if self.current_path.path.parent == user_maps_dir:
+                self.current_path = None
+            else:
+                self.current_path = MyPath(self.current_path.path.parent, False, True)
+            self.update()
 
 
 class MapEditor(MapLoader):
@@ -229,22 +245,22 @@ class MapEditor(MapLoader):
             yield Button("Back", id="back", variant="error")
 
     def update(self) -> None:
-        scroll = self.query_one(VerticalScroll)
-        scroll.remove_children()
-
-        if self.current_path is None:
-            items = list_builtin_root()
-        else:
-            items = list_maps_in(self.current_path)
-
-        for p in items:
-            scroll.mount(MapButton(p, classes="map_button"))
+        self._update_map_list_and_focus()
 
     def _return_new_map(self, new_map_data: NewMapData) -> None:
-        new_map_file = user_map(new_map_data.map_name)
+        target_dir = self.current_path.path if self.current_path else user_creations_dir
+        target_dir.mkdir(parents=True, exist_ok=True)
+        new_map_file = target_dir / f"{new_map_data.map_name}.json"
+
         create_empty_map(new_map_file, new_map_data.authors)
         self.dismiss(MapChain(0, [new_map_file]))
 
     @on(Button.Pressed, "#create_map")
     async def create_map_button(self, event: Button.Pressed) -> None:
-        self.app.push_screen(CreateNewMapScreen(), self._return_new_map)
+        target_path_for_new_map_screen = (
+            self.current_path.path if self.current_path else user_creations_dir
+        )
+        self.app.push_screen(
+            CreateNewMapScreen(target_dir=target_path_for_new_map_screen),
+            self._return_new_map,
+        )

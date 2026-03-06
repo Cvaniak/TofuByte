@@ -15,8 +15,11 @@ from tofu_byte.screens.game_display import (
     EditorScreenContainer,
     ScenarioScreenContainer,
 )
+from tofu_byte.screens.menu.github_maps_browser import GitHubMapsBrowser
 from tofu_byte.screens.menu.map_loader import MapChain
 from tofu_byte.screens.screens import MenuScreenBase
+from tofu_byte.screens.menu.map_loader import MapLoader
+from tofu_byte.screens.menu.map_loader import MapEditor
 
 
 class Menu(MenuScreenBase[None]):
@@ -28,6 +31,7 @@ class Menu(MenuScreenBase[None]):
             if DEBUG["scenarios"]:
                 yield Button("Scenarios", id="scenarios", variant="primary")
             yield Button("Edit Map", id="map_editor", variant="primary")
+            yield Button("Community Maps", id="browse_maps", variant="primary")
             yield Button("Troubleshooting", id="troubleshooting", variant="primary")
             yield Button("About", id="about", variant="primary")
             yield Button("Quit", id="quit", variant="error")
@@ -55,6 +59,10 @@ class Menu(MenuScreenBase[None]):
     @on(Button.Pressed, "#map_editor")
     async def map_editor(self):
         self.app.push_screen("map_editor", self.on_load_map_editor)
+
+    @on(Button.Pressed, "#browse_maps")
+    async def browse_maps(self):
+        self.app.push_screen(GitHubMapsBrowser())
 
     @on(Button.Pressed, "#troubleshooting")
     def troubleshooting(self):
